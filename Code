@@ -17,11 +17,13 @@ contract Windowshadow is ERC1155, Ownable {
         ERC1155("https://emerald-imaginative-spoonbill-973.mypinata.cloud/ipfs/bafybeib5pxmcdxjyoifexaameij3dyisbw4gikbv2b4nvvrhhqg6mgk7nu/{id}.json")
         Ownable(initialOwner)
     {
-        mint(msg.sender, Diamante, 100, "");
-        mint(msg.sender, Maniglia, 1, "");
-        mint(msg.sender, Vetro, 1, "");
+        _mint(msg.sender, Diamante, 100, "");
+        _mint(msg.sender, Maniglia, 1, "");
+        _mint(msg.sender, Vetro, 1, "");
     }
 
     function setURI(string memory newuri) public onlyOwner {
         _setURI(newuri);
     }
+}
+
